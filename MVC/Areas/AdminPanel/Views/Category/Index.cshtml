@@ -1,0 +1,91 @@
+﻿@model IEnumerable<Entities.Categories>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+<style>
+.yeni{
+    padding:10px;
+    background:blue; 
+    border-radius:5px;
+    margin-bottom:10px;
+    text-align:center;
+}
+  .yeniyarat{
+     color:white;
+     font-weight:600;
+     cursor:pointer;
+    }
+
+    .edit{
+        padding:7px 10px;
+        background:blue;
+        color:white;
+        font-weight:500;
+        border-radius:6px;
+    }
+    .detail{
+        padding:7px 10px;
+        background:yellow;
+        color:white;
+        font-weight:500;
+        border-radius:6px;
+
+    }
+    .delete{
+         padding:7px 8px;
+        background:red;
+        color:white;
+        font-weight:500;
+        border-radius:6px;
+    }
+    </style>
+    <div class=" yeni col-2">
+ <p>
+    <a class="yeniyarat" asp-action="Create">Create New</a>
+</p>
+    </div>
+
+<table class="table"  id="productTable">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryName)
+            </th>
+       
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryIcon)
+            </th>
+     
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryName)
+            </td>
+     
+            <td>
+                <i class="@Html.DisplayFor(modelItem => item.CategoryIcon)"></i>          
+            </td>
+  
+            <td>
+               <a class="edit" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a class="detail" asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a class="delete" asp-action="Delete" asp-route-id="@item.Id">Delete</a>     
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+@section MyScripts{
+    <script>
+        $(document).ready( function () {
+      $('#productTable').DataTable();
+} );
+    </script>
+}

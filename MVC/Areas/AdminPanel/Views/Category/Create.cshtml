@@ -1,0 +1,55 @@
+﻿@model Entities.Categories
+
+@{
+    ViewData["Title"] = "Create";
+
+}
+
+<h1>Create</h1>
+
+<h4>Categories</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CategoryName" class="control-label"></label>
+                <input asp-for="CategoryName" class="form-control" />
+                <span asp-validation-for="CategoryName" class="text-danger"></span>
+            </div>
+    
+            <div class="form-group">
+                <label asp-for="CategoryIcon" class="control-label"></label>
+                <input asp-for="CategoryIcon" class="form-control" type="hidden" />
+                <span asp-validation-for="CategoryIcon" class="text-danger"></span>
+                 <div class="IconCat">
+                      <i class="fas fa-facebook"></i>
+                      <i class="fas fa-network-wired"></i>
+                      <i class="fas fa-hospital-user"></i>
+                      <i class="fas fa-twitter"></i>
+                      <i class="fas fa-project-diagram"></i>
+                  </div>    
+            </div>
+  
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section MyScripts{
+    <script>
+        $(".IconCat i").click(function(){
+            const iconatr=($(this).attr("class"));
+            console.log(iconatr)
+            $("#CategoryIcon").val(iconatr);
+        })
+
+    </script>
+}

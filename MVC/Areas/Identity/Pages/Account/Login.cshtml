@@ -1,0 +1,219 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Log in";
+}
+
+<h1>@ViewData["Title"]</h1>
+@*<div class="row">
+    <div class="col-md-4">
+        <section>
+            <form id="account" method="post">
+                <h2>Use a local account to log in.</h2>
+                <hr />
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-floating">
+                    <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" />
+                    <label asp-for="Input.Email" class="form-label"></label>
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                </div>
+                <div class="form-floating">
+                    <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" />
+                    <label asp-for="Input.Password" class="form-label"></label>
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                </div>
+                <div>
+                    <div class="checkbox">
+                        <label asp-for="Input.RememberMe" class="form-label">
+                            <input class="form-check-input" asp-for="Input.RememberMe" />
+                            @Html.DisplayNameFor(m => m.Input.RememberMe)
+                        </label>
+                    </div>
+                </div>
+                <div>
+                    <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-primary">Log in</button>
+                </div>
+                <div>
+                    <p>
+                        <a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
+                    </p>
+                    <p>
+                        <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a>
+                    </p>
+                    <p>
+                        <a id="resend-confirmation" asp-page="./ResendEmailConfirmation">Resend email confirmation</a>
+                    </p>
+                </div>
+            </form>
+        </section>
+    </div>
+    <div class="col-md-6 col-md-offset-2">
+        <section>
+            <h3>Use another service to log in.</h3>
+            <hr />
+          
+        </section>
+    </div>
+</div>*@
+
+
+
+
+
+
+
+    <div class="ltn__utilize-overlay"></div>
+
+    <!-- BREADCRUMB AREA START -->
+    <div class="ltn__breadcrumb-area ltn__breadcrumb-area-4 bg-overlay-theme-10--- bg-image" data-bg="/AdminFiles/imgbg/4.png">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ltn__breadcrumb-inner ltn__breadcrumb-inner-4 justify-content-between">
+                        <div class="section-title-area">
+                            <h1 class="section-title white-color">Login</h1>
+                        </div>
+                        <div class="ltn__breadcrumb-list">
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li>Login</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- BREADCRUMB AREA END -->
+
+    <!-- LOGIN AREA START -->
+
+    <div class="ltn__login-area pb-65">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title-area text-center">
+                        <h1 class="section-title">Sign In <br>To  Your Account</h1>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+                             Sit aliquid,  Non distinctio vel iste.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="account-login-inner">
+                        <form id="account" method="post" class="ltn__form-box contact-form-box">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-floating">
+                            <input asp-for="Input.Email" placeholder="Email*" aria-required="true">
+                               <span asp-validation-for="Input.Email" class="text-danger"></span>
+                            </div>
+                            <div class="form-floating">
+                                  <input asp-for="Input.Password" placeholder="Password*" aria-required="true"> 
+                               <span asp-validation-for="Input.Password" class="text-danger"></span>
+                            </div>
+                          
+                            <div class="btn-wrapper mt-0">
+                                <button id="login-submit" type="submit"  class="theme-btn-1 btn btn-block">SIGN IN</button>
+                            </div>
+                            <div class="go-to-btn mt-20">
+                                <a id="forgot-password" asp-page="./ForgotPassword"><small>FORGOTTEN YOUR PASSWORD?</small></a>
+                            </div>
+                      <div class="checkbox">
+                        <label asp-for="Input.RememberMe" class="form-label">
+                            <input class="form-check-input" asp-for="Input.RememberMe" />
+                            @Html.DisplayNameFor(m => m.Input.RememberMe)
+                        </label>
+                <div>
+                    <p>
+                        <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a>
+                    </p>
+                    <p>
+                        <a id="resend-confirmation" asp-page="./ResendEmailConfirmation">Resend email confirmation</a>
+                    </p>
+                </div>
+                    </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="account-create text-center pt-50">
+                        <h4>DON'T HAVE AN ACCOUNT?</h4>
+                        <p>Add items to your wishlistget personalised recommendations <br>
+                            check out more quickly track your orders register</p>
+                        <div class="btn-wrapper">
+                            <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl" class="theme-btn-1 btn black-btn">CREATE ACCOUNT</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- LOGIN AREA END -->
+
+    <!-- FEATURE AREA START ( Feature - 3) -->
+    <div class="ltn__feature-area before-bg-bottom before-bg-bottom-2 plr--5">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ltn__feature-item-box-wrap ltn__border-between-column white-bg">
+                        <div class="row">
+                            <div class="col-xl-3 col-md-6 col-12">
+                                <div class="ltn__feature-item ltn__feature-item-8">
+                                    <div class="ltn__feature-icon">
+                                        <img src="/AdminFiles/imgicons/svg/4-track.svg" alt="#">
+                                    </div>
+                                    <div class="ltn__feature-info">
+                                        <h4>Free home delivery</h4>
+                                        <p>Provide free home delivery for
+                                            all product over $100</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-6 col-12">
+                                <div class="ltn__feature-item ltn__feature-item-8">
+                                    <div class="ltn__feature-icon">
+                                        <img src="/AdminFiles/imgicons/svg/5-madel.svg" alt="#">
+                                    </div>
+                                    <div class="ltn__feature-info">
+                                        <h4>Quality Products</h4>
+                                        <p>We ensure the product quality
+                                            that is our main goal</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-6 col-12">
+                                <div class="ltn__feature-item ltn__feature-item-8">
+                                    <div class="ltn__feature-icon">
+                                        <img src="/AdminFiles/imgicons/svg/6-return.svg" alt="#">
+                                    </div>
+                                    <div class="ltn__feature-info">
+                                        <h4>3 Days Return</h4>
+                                        <p>Return product within 3 days
+                                            for any product you buy</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-6 col-12">
+                                <div class="ltn__feature-item ltn__feature-item-8">
+                                    <div class="ltn__feature-icon">
+                                        <img src="/AdminFiles/imgicons/svg/7-support.svg" alt="#">
+                                    </div>
+                                    <div class="ltn__feature-info">
+                                        <h4>Online Support</h4>
+                                        <p>We ensure the product quality
+                                            that you can trust easily</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
